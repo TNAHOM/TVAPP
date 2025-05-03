@@ -1,4 +1,6 @@
-export const channels = [
+import type { Channel } from "@/types";
+
+export const channels: Channel[] = [
   {
     id: 1,
     name: "Channel Name",

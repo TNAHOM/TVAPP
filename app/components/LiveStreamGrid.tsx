@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { Play, Users } from "lucide-react";
 import { liveStreams } from "@/lib/mockdata/liveStreams";
+import type { LiveStreamGridProps } from "@/types";
 
 export default function LiveStreamGrid({
   showSchedule = false,
-}: {
-  showSchedule?: boolean;
-}) {
+}: LiveStreamGridProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {liveStreams.map((stream) => (

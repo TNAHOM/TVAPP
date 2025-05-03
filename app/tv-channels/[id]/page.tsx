@@ -1,13 +1,13 @@
+"use client";
 import NavBar from "@/app/components/NavBar";
 import Sidebar from "@/app/components/Sidebar";
 import ChannelDetail from "@/app/components/ChannelDetail";
 import VideoGrid from "@/app/components/VideoGrid";
+import { useParams } from "next/navigation";
 
-export default function TVChannelDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function TVChannelDetailPage() {
+  const { id } = useParams();
+
   return (
     <main
       className="relative flex flex-col h-screen w-full text-white overflow-hidden"

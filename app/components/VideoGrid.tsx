@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { videos } from "@/lib/mockdata/videos";
+import type { Video } from "@/types";
 
 export default function VideoGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {videos.map((video) => (
+      {videos.map((video: Video) => (
         <div key={video.id} className="relative group cursor-pointer">
           <div className="relative aspect-video overflow-hidden rounded-lg">
             <Image

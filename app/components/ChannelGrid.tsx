@@ -3,12 +3,11 @@ import Image from "next/image";
 import { ThumbsUp, Play } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { channels } from "@/lib/mockdata/channels";
+import type { ChannelGridProps, Channel } from "@/types";
 
 export default function ChannelGrid({
   showWatchNow = false,
-}: {
-  showWatchNow?: boolean;
-}) {
+}: ChannelGridProps) {
   const router = useRouter();
 
   const handleChannelClick = (id: number) => {
@@ -17,7 +16,7 @@ export default function ChannelGrid({
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {channels.map((channel) => (
+      {channels.map((channel: Channel) => (
         <div
           key={channel.id}
           className="relative group cursor-pointer"

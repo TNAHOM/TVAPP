@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TV Streaming Platform
 
-## Getting Started
+A modern, TV-optimized streaming application built with Next.js, showcasing channels, live streams, on-demand videos, and short-form reels in responsive grid layouts.
 
-First, run the development server:
+## Tech Stack and Tools
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js 15** (App Router, Server Components)
+- **React 19** (Client Components and hooks)
+- **TypeScript** (Static typing)
+- **Tailwind CSS 4** (Utility-first styling)
+- **PostCSS** & **@tailwindcss/postcss**
+- **Lucide React** (Icon library)
+- **class-variance-authority**, **clsx**, **tailwind-merge** (Styling utilities)
+- **tw-animate-css** (Animations)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **app/**
+  - **layout.tsx** & **page.tsx** 
+  - **globals.css**
+  - **components/**: reusable UI pieces
+    - NavBar, Sidebar, ChannelGrid, ChannelDetail, ChannelHeader,
+      LiveStreamGrid, ReelGrid, VideoGrid
+  - **live-stream/page.tsx**: grid of live streams
+  - **stream/page.tsx**: primary video stream section
+  - **tv-channels/**
+    - **page.tsx**: channel listing
+    - **[id]/page.tsx**: detailed channel view
+  - **video-stream/page.tsx**: on-demand videos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **lib/**
+  - **utils.ts**: helper functions
+  - **mockdata/**: static JSON-like data for
+    channels, channelDetail, liveStreams, reels, videos
 
-## Learn More
+- **public/**
+  - Static assets: SVGs, images for mock content and placeholders
 
-To learn more about Next.js, take a look at the following resources:
+## Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Responsive grid layouts adapting from mobile to large TVs
+- Channel browsing with thumbnails, categories, viewer counts, and watch-time overlays
+- Detailed channel pages displaying statistics, upcoming streams, reminder actions, and mock waiting-user avatars
+- Dedicated sections for live streams, on-demand videos, and short-form reels
+- Smooth hover and transition effects powered by Tailwind CSS and tw-animate-css
+- Iconography using Lucide React for consistent visuals
+- Mock data driven: easy swapping for real API integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Pages Overview
 
-## Deploy on Vercel
+- **/stream** — Main video streaming hub
+- **/live-stream** — Showcase of currently live broadcasts
+- **/video-stream** — On-demand video catalog
+- **/tv-channels** — Channel directory
+- **/tv-channels/[id]** — In-depth channel detail views
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Reusable Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **NavBar** — Top-level navigation bar across sections
+- **Sidebar** — Secondary navigation for TV-oriented layout
+- **ChannelGrid** — Displays channel cards in a responsive grid
+- **ChannelDetail** — Rich channel profile with stats and actions
+- **LiveStreamGrid**, **VideoGrid**, **ReelGrid** — Grids for live streams, videos, reels
+- **ChannelHeader** — Header component for channel lists
+
+## Mock Data
+
+All content is currently powered by mock data modules under `lib/mockdata`, enabling rapid prototyping:
+
+- `channels.ts` — Array of channel objects for the grid
+- `channelDetail.ts` — Channel-specific detail data
+- `liveStreams.ts`, `videos.ts`, `reels.ts` — Data for specialized grids
+
+_Disclaimer: This project uses static mock data; replace with real APIs for production._

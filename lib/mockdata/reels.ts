@@ -1,4 +1,6 @@
-export const reels = [
+import type { Reel } from "@/types";
+
+export const reels: Reel[] = [
   {
     id: 1,
     title: "Reel Title",

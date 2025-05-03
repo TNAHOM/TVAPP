@@ -1,16 +1,14 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import type { SidebarProps, MenuItem } from "@/types";
 
 export default function Sidebar({
   activePage = "stream",
   transparent = false,
-}: {
-  activePage?: string;
-  transparent?: boolean;
-}) {
+}: SidebarProps) {
   const router = useRouter();
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       id: "stream",
       label: "Stream Destpek",

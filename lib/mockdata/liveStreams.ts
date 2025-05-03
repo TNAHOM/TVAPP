@@ -1,4 +1,6 @@
-export const liveStreams = [
+import type { LiveStream } from "@/types";
+
+export const liveStreams: LiveStream[] = [
   {
     id: 1,
     title: "Stream Title",

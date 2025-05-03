@@ -1,1 +1,3 @@
-export const mockWaitingUsers = [1, 2, 3, 4, 5];
+import type { WaitingUserId } from "@/types";
+
+export const mockWaitingUsers: WaitingUserId[] = [1, 2, 3, 4, 5];
